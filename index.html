@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estúdio 2 — Marketing Digital</title>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1655987078938767');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1655987078938767&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B2B;
+      --black:  #0D0D0D;
+      --gray:   #1A1A1A;
+      --light:  #F5F5F5;
+      --white:  #FFFFFF;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('foto.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,13,13,0.7) 0%,
+        rgba(13,13,13,0.5) 50%,
+        rgba(13,13,13,0.85) 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--gray);
+      border-radius: 28px;
+      padding: 40px 28px 36px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* LOGO */
+    .logo-wrap {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(255,107,43,0.25);
+    }
+
+    .logo-wrap svg {
+      width: 64px;
+      height: auto;
+    }
+
+    /* NOME + TAGLINE */
+    .name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .name span {
+      color: var(--orange);
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .location {
+      font-size: 0.78rem;
+      color: #666;
+      font-weight: 600;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .location svg { width: 12px; height: 12px; }
+
+    /* DIVIDER */
+    .divider {
+      width: 48px;
+      height: 3px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--orange), #ff9a6b);
+      margin-bottom: 28px;
+    }
+
+    /* SEÇÃO */
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+
+    /* SERVIÇOS */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 28px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .service-card:hover {
+      border-color: rgba(255,107,43,0.4);
+      background: rgba(255,107,43,0.05);
+    }
+
+    .service-icon {
+      font-size: 1.4rem;
+    }
+
+    .service-name {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    /* DIFERENCIAIS */
+    .diffs {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .diff-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .diff-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .diff-text {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #ccc;
+      line-height: 1.4;
+    }
+
+    .diff-text strong {
+      color: var(--white);
+      display: block;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    /* PROCESSO */
+    .process {
+      width: 100%;
+      margin-bottom: 28px;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      position: relative;
+      padding-bottom: 16px;
+    }
+
+    .step:last-child {
+      padding-bottom: 0;
+    }
+
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-line {
+      width: 2px;
+      flex: 1;
+      background: rgba(255,107,43,0.25);
+      margin-top: 4px;
+      min-height: 20px;
+    }
+
+    .step:last-child .step-line {
+      display: none;
+    }
+
+    .step-content {
+      padding-top: 4px;
+    }
+
+    .step-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .step-desc {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #888;
+    }
+
+    /* BOTÃO WHATSAPP */
+    .btn-whats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 18px 22px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: white;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.25);
+      transition: transform 0.18s ease, filter 0.18s ease;
+      margin-bottom: 16px;
+    }
+
+    .btn-whats:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .btn-whats svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    .footer {
+      font-size: 0.7rem;
+      color: #444;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    .footer span { color: var(--orange); }
+  </style>
+</head>
+<body>
+<div class="card">
+
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <img src="logo.png.PNG" alt="Estúdio 2 Marketing" style="width:72px;height:72px;object-fit:contain;" />
+  </div>
+
+  <!-- NOME -->
+  <div class="name">Estúdio <span>2</span></div>
+  <div class="tagline">Marketing Digital · Guriri & São Mateus</div>
+  <div class="location">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+    </svg>
+    Espírito Santo · Brasil
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SERVIÇOS -->
+  <div class="section-title">O que fazemos</div>
+  <div class="services">
+    <a class="service-card" href="gestao-de-redes.html">
+      <div class="service-icon">📱</div>
+      <div class="service-name">Gestão de Redes Sociais</div>
+    </a>
+    <a class="service-card" href="producao-de-videos.html">
+      <div class="service-icon">🎬</div>
+      <div class="service-name">Produção de Vídeos</div>
+    </a>
+    <a class="service-card" href="landing-page.html">
+      <div class="service-icon">🔗</div>
+      <div class="service-name">Landing Page para Bio</div>
+    </a>
+    <a class="service-card" href="trafego-pago.html">
+      <div class="service-icon">🎯</div>
+      <div class="service-name">Tráfego Pago — Meta Ads</div>
+    </a>
+  </div>
+
+  <!-- DIFERENCIAIS -->
+  <div class="section-title">Por que o Estúdio 2?</div>
+  <div class="diffs">
+    <div class="diff-item">
+      <div class="diff-icon">🤝</div>
+      <div class="diff-text">
+        <strong>Acompanhamento real</strong>
+        Presencial e via WhatsApp. Você nunca fica sem resposta.
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-icon">📊</div>
+      <div class="diff-text">
+        <strong>Relatório mensal</strong>
+        Redes sociais e Meta Ads com dados claros e transparentes.
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-icon">✅</div>
+      <div class="diff-text">
+        <strong>Aprovação antes de publicar</strong>
+        Você aprova o calendário editorial antes de produzirmos tudo.
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-icon">🏆</div>
+      <div class="diff-text">
+        <strong>Foco em resultados</strong>
+        Nosso compromisso é que seu negócio cresça de verdade.
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESSO -->
+  <div class="section-title">Como trabalhamos</div>
+  <div class="process">
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Calendário Editorial</div>
+          <div class="step-desc">Planejamos e enviamos para sua aprovação</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Visita Presencial</div>
+          <div class="step-desc">Produção de conteúdo no seu negócio</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Edição Profissional</div>
+          <div class="step-desc">Vídeos e artes com copy adaptada</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Publicação</div>
+          <div class="step-desc">Gerenciamos tudo para você</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">5</div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Relatório Mensal</div>
+          <div class="step-desc">Resultados detalhados todo mês</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA WHATSAPP -->
+  <a class="btn-whats" href="https://wa.me/5527995309855?text=Olá!%20Vi%20o%20perfil%20do%20Estúdio%202%20e%20quero%20saber%20mais%20sobre%20os%20serviços." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.554 4.1 1.523 5.824L.057 23.7a.5.5 0 00.611.638l5.995-1.57A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.371l-.36-.214-3.732.978.995-3.63-.235-.374A9.862 9.862 0 012.1 12C2.1 6.534 6.534 2.1 12 2.1c5.466 0 9.9 4.434 9.9 9.9 0 5.466-4.434 9.9-9.9 9.9z"/>
+    </svg>
+    Fale com a gente agora
+  </a>
+
+  <div class="footer">
+    Guriri & São Mateus · ES<br/>
+    <span>Estúdio 2</span> · Marketing Digital
+  </div>
+
+</div>
+</body>
+</html>
