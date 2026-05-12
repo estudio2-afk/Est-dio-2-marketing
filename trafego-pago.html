@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tráfego Pago — Meta Ads — Estúdio 2</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1655987078938767');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'Trafego Pago Meta Ads',
+  content_category: 'Servico'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1655987078938767&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange: #FF6B2B;
+  --black: #0D0D0D;
+  --gray: #1A1A1A;
+  --white: #FFFFFF;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('foto.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.5) 50%, rgba(13,13,13,0.85) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.card {
+  position: relative;
+  z-index: 1;
+  background: var(--gray);
+  border-radius: 28px;
+  padding: 32px 24px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeUp 0.5s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.back-btn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #888;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+.back-btn:hover { color: var(--orange); }
+.back-btn svg { width: 16px; height: 16px; }
+.service-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.service-emoji {
+  font-size: 3rem;
+  background: rgba(255,107,43,0.1);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.service-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.service-subtitle {
+  font-size: 0.82rem;
+  color: #888;
+  font-weight: 600;
+}
+.divider {
+  width: 48px;
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--orange), #ff9a6b);
+  margin-bottom: 24px;
+}
+.section-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+.includes-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.include-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255,107,43,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.check svg { width: 10px; height: 10px; }
+.include-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ccc;
+  line-height: 1.4;
+}
+.include-text strong {
+  color: var(--white);
+  font-weight: 800;
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 1px;
+}
+.placements {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.placement-tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 99px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ccc;
+}
+.warning-box {
+  width: 100%;
+  background: rgba(255,107,43,0.06);
+  border: 1px solid rgba(255,107,43,0.15);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.warning-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.warning-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #aaa;
+  line-height: 1.5;
+}
+.warning-text strong { color: var(--orange); font-weight: 800; }
+.price-box {
+  width: 100%;
+  background: rgba(255,107,43,0.08);
+  border: 1px solid rgba(255,107,43,0.2);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.price-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.price-value {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--white);
+}
+.price-note {
+  font-size: 0.72rem;
+  color: #666;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.btn-whats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 22px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.25);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+.btn-whats:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.btn-whats svg { width: 22px; height: 22px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <a class="back-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+    Voltar
+  </a>
+
+  <div class="service-header">
+    <div class="service-emoji">🎯</div>
+    <div class="service-title">Tráfego Pago</div>
+    <div class="service-subtitle">Anúncios no Instagram e Facebook — Meta Ads</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title">O que está incluso</div>
+  <div class="includes-list">
+    <div class="include-item">
+      <div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#FF6B2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div class="include-text"><strong>Criação e gestão das campanhas</strong>Configuramos tudo no Gerenciador de Anúncios com objetivo correto para o seu negócio</div>
+    </div>
+    <div class="include-item">
+      <div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#FF6B2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div class="include-text"><strong>Definição do público</strong>Segmentamos por localização, interesse, comportamento e públicos personalizados do seu Pixel</div>
+    </div>
+    <div class="include-item">
+      <div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#FF6B2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div class="include-text"><strong>Criativo dos anúncios</strong>Desenvolvemos o vídeo ou imagem e a copy do anúncio — tudo incluso no serviço</div>
+    </div>
+    <div class="include-item">
+      <div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#FF6B2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div class="include-text"><strong>Otimização contínua</strong>Acompanhamos os resultados e ajustamos os anúncios durante o mês para melhorar o desempenho</div>
+    </div>
+    <div class="include-item">
+      <div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#FF6B2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div class="include-text"><strong>Relatório mensal detalhado</strong>Alcance, cliques, custo por resultado e análise do que funcionou melhor</div>
+    </div>
+  </div>
+
+  <div class="section-title">Onde seus anúncios aparecem</div>
+  <div class="placements">
+    <span class="placement-tag">Instagram Feed</span>
+    <span class="placement-tag">Instagram Stories</span>
+    <span class="placement-tag">Instagram Reels</span>
+    <span class="placement-tag">Facebook Feed</span>
+    <span class="placement-tag">Audience Network</span>
+  </div>
+
+  <div class="warning-box">
+    <div class="warning-icon">⚠️</div>
+    <div class="warning-text">
+      <strong>Verba de anúncios é separada.</strong> A taxa do Estúdio 2 cobre gestão e criativo. O valor investido diretamente no Meta Ads é definido por você — recomendamos o mínimo para começar com resultado.
+    </div>
+  </div>
+
+  <div class="price-box">
+    <div class="price-label">Taxa de gestão mensal</div>
+    <div class="price-value">Consulte via WhatsApp 👇</div>
+    <div class="price-note">Verba de anúncios não inclusa</div>
+  </div>
+
+  <a class="btn-whats" href="https://wa.me/5527995309855?text=Olá!%20Tenho%20interesse%20no%20Tráfego%20Pago%20com%20Meta%20Ads%20do%20Estúdio%202.%20Quero%20saber%20mais." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.554 4.1 1.523 5.824L.057 23.7a.5.5 0 00.611.638l5.995-1.57A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.371l-.36-.214-3.732.978.995-3.63-.235-.374A9.862 9.862 0 012.1 12C2.1 6.534 6.534 2.1 12 2.1c5.466 0 9.9 4.434 9.9 9.9 0 5.466-4.434 9.9-9.9 9.9z"/>
+    </svg>
+    Quero anunciar no Meta Ads
+  </a>
+
+</div>
+</body>
+</html>
