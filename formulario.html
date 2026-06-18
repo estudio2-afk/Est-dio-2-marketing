@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulário de Contato — Estúdio 2</title>
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1655987078938767');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1655987078938767&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #121212;
+      color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .form-wrapper {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .form-header .tag {
+      display: inline-block;
+      background-color: #FF6B2B;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .form-header h2 {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .form-header h2 span { color: #FF6B2B; }
+
+    .form-header p {
+      font-size: 15px;
+      color: #AAAAAA;
+      line-height: 1.6;
+    }
+
+    .form-card {
+      background-color: #1E1E1E;
+      border: 1px solid #2A2A2A;
+      border-radius: 16px;
+      padding: 36px 32px;
+    }
+
+    .form-group { margin-bottom: 20px; }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #CCCCCC;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background-color: #2A2A2A;
+      border: 1px solid #333333;
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      color: #FFFFFF;
+      outline: none;
+      transition: border-color 0.2s ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input::placeholder, textarea::placeholder { color: #666666; }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #FF6B2B;
+      background-color: #2E2E2E;
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    select option {
+      background-color: #2A2A2A;
+      color: #FFFFFF;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #2A2A2A;
+      margin: 24px 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #FF6B2B;
+      color: #FFFFFF;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      letter-spacing: 0.3px;
+      margin-top: 4px;
+    }
+
+    .submit-btn:hover { background-color: #e85e22; }
+    .submit-btn:active { transform: scale(0.98); }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 12px;
+      color: #666666;
+    }
+
+    /* Success */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 40px 32px;
+    }
+
+    .success-msg .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .success-msg h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #FF6B2B;
+      margin-bottom: 10px;
+    }
+
+    .success-msg p {
+      font-size: 15px;
+      color: #AAAAAA;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .btn-wpp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      box-shadow: 0 4px 20px rgba(37,211,102,0.2);
+      transition: filter 0.2s, transform 0.1s;
+    }
+
+    .btn-wpp:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+    @media (max-width: 480px) {
+      .form-card { padding: 28px 20px; }
+      .form-header h2 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-wrapper">
+
+  <div class="form-header">
+    <div class="tag">Fale com a gente</div>
+    <h2>Vamos crescer o seu <span>negócio juntos?</span></h2>
+    <p>Preencha o formulário e entraremos em contato pelo WhatsApp em breve.</p>
+  </div>
+
+  <div class="form-card">
+
+    <form id="leadForm" action="https://formspree.io/f/xzdqqqoq" method="POST">
+
+      <div class="form-group">
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" required />
+      </div>
+
+      <div class="form-group">
+        <label for="whatsapp">WhatsApp</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(27) 99999-9999" required />
+      </div>
+
+      <div class="form-group">
+        <label for="negocio">Tipo de negócio</label>
+        <input type="text" id="negocio" name="negocio" placeholder="Ex: salão de beleza, clínica, restaurante..." required />
+      </div>
+
+      <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade" placeholder="Ex: São Mateus, Guriri..." required />
+      </div>
+
+      <hr class="divider" />
+
+      <div class="form-group">
+        <label for="servico">Qual serviço você está buscando?</label>
+        <select id="servico" name="servico" required>
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option value="redes-sociais">Gestão de Redes Sociais (posts + reels profissionais)</option>
+          <option value="trafego-pago">Gestão de Anúncios (Meta Ads)</option>
+          <option value="ambos">Os dois juntos</option>
+          <option value="nao-sei">Ainda não sei — quero entender melhor</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="investimento">Quanto você consegue investir em marketing por mês?</label>
+        <select id="investimento" name="investimento" required>
+          <option value="" disabled selected>Selecione uma faixa</option>
+          <option value="1000-1500">R$ 1.000 a R$ 1.500</option>
+          <option value="1500-3000">R$ 1.500 a R$ 3.000</option>
+          <option value="acima-3000">Acima de R$ 3.000</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Quero conversar com o Estúdio 2 →</button>
+
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <div class="icon">🎉</div>
+      <h3>Recebemos sua mensagem!</h3>
+      <p>Em breve entraremos em contato. Se preferir, fale com a gente agora pelo WhatsApp:</p>
+      <a id="wppBtn" class="btn-wpp" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.554 4.1 1.523 5.824L.057 23.7a.5.5 0 00.611.638l5.995-1.57A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.371l-.36-.214-3.732.978.995-3.63-.235-.374A9.862 9.862 0 012.1 12C2.1 6.534 6.534 2.1 12 2.1c5.466 0 9.9 4.434 9.9 9.9 0 5.466-4.434 9.9-9.9 9.9z"/>
+        </svg>
+        Falar no WhatsApp agora
+      </a>
+    </div>
+
+  </div>
+
+  <p class="form-footer">Seus dados são confidenciais e não serão compartilhados.</p>
+
+</div>
+
+<script>
+  const form      = document.getElementById('leadForm');
+  const successMsg = document.getElementById('successMsg');
+  const wppBtn    = document.getElementById('wppBtn');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Dispara evento Lead no Pixel do Meta
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+        }
+
+        // Monta mensagem pré-preenchida com nome e serviço
+        const nome    = data.get('nome') || '';
+        const servico = form.querySelector('#servico option:checked').text || '';
+        const msg     = encodeURIComponent(
+          'Olá! Meu nome é ' + nome + '. Preenchi o formulário da Estúdio 2 e tenho interesse em: ' + servico + '. Gostaria de conversar!'
+        );
+        wppBtn.href = 'https://wa.me/5527997143078?text=' + msg;
+
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        alert('Algo deu errado. Tente novamente ou nos chame no WhatsApp.');
+      }
+    } catch (error) {
+      alert('Erro de conexão. Verifique sua internet e tente novamente.');
+    }
+  });
+</script>
+
+</body>
+</html>
